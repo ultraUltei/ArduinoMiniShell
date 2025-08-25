@@ -2,15 +2,18 @@
 
 A command-line interface to interact with your Arduino board via the Serial Monitor in the Arduino IDE or terminal programs like minicom and CoolTerm.
 
-## 🔧 Installation
+## 🔧 Usage
 
 1. **Upload the code to your Arduino board**  
    Use the Arduino IDE to upload the sketch to your board.
 
 2. **Open the Serial Monitor**  
-   Set the baud rate to 115200 and line ending to "Newline".
+   Use shellInit() into your setup().
 
-3. **Start typing commands**  
+3. **Start the Arduino Shell**  
+   Use shellTask() into your loop() in order to make the shell capacable of capturing your inputs.
+
+4. **Start typing commands**  
    After the prompt `arduino:~$`, you can enter the available commands.
 
 ---
@@ -32,10 +35,6 @@ arduino:~$ up analog 3 255
 PIN 3 set to OUTPUT
 Analog value: 255
 
-markdown
-Copia
-Modifica
-
 ### `down <number>`
 Set a digital pin to `LOW`.
 
@@ -44,21 +43,13 @@ arduino:~$ down 13
 PIN 13
 state: DOWN
 
-makefile
-Copia
-Modifica
-
 ### `read <number>`
-Read the analog value of a pin (0-1023).
+Read the analog value of an analogic pin (0-1023).
 
 **Example:**
 arduino:~$ read 4
 Reading A4
 value: 512
-
-css
-Copia
-Modifica
 
 ### `list`
 Display the current status of all configured pins.
@@ -67,10 +58,6 @@ Display the current status of all configured pins.
 arduino:~$ list
 [13] Digital(PWM) OUTPUT
 [3] Analog OUTPUT
-
-yaml
-Copia
-Modifica
 
 ---
 
