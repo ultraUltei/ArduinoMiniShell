@@ -8,10 +8,10 @@ A command-line interface to interact with your Arduino board via the Serial Moni
    Use the Arduino IDE to upload the sketch to your board.
 
 2. **Open the Serial Monitor**  
-   Use shellInit() into your setup().
+   Use shellInit() into your setup() function.
 
 3. **Start the Arduino Shell**  
-   Use shellTask() into your loop() in order to make the shell capacable of capturing your inputs.
+   Use shellTask() into your loop() function in order to make the shell capacable of capturing your inputs.
 
 4. **Start typing commands**  
    After the prompt `arduino:~$`, you can enter the available commands.
