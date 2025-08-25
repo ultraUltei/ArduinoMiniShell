@@ -11,6 +11,7 @@ Use the Arduino IDE to upload the sketch to your board.
 
 ### Open the Serial Monitor
 Call `shellInit()` in your `setup()` function.
+Use can also call the `setPrompt()` function to change the prompt as you like.
 
 ### Start the Arduino Shell
 Call `shellTask()` in your `loop()` function to allow the shell to capture your inputs.
