@@ -2,19 +2,21 @@
 
 A command-line interface to interact with your Arduino board via the Serial Monitor in the Arduino IDE or terminal programs like minicom and CoolTerm.
 
+---
+
 ## 🔧 Usage
 
-1. **Upload the code to your Arduino board**  
-   Use the Arduino IDE to upload the sketch to your board.
+### Upload the code to your Arduino board
+Use the Arduino IDE to upload the sketch to your board.
 
-2. **Open the Serial Monitor**  
-   Use shellInit() into your setup() function.
+### Open the Serial Monitor
+Call `shellInit()` in your `setup()` function.
 
-3. **Start the Arduino Shell**  
-   Use shellTask() into your loop() function in order to make the shell capacable of capturing your inputs.
+### Start the Arduino Shell
+Call `shellTask()` in your `loop()` function to allow the shell to capture your inputs.
 
-4. **Start typing commands**  
-   After the prompt `arduino:~$`, you can enter the available commands.
+### Start typing commands
+After the prompt `arduino:~$`, you can enter the available commands.
 
 ---
 
