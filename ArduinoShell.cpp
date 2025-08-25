@@ -289,10 +289,15 @@ void shellTask() {
 
 void setup()
 {
+	shellInit();
     // setup code here
 }
 
 void loop()
 {
+	shellTask();
     // loop code here
+
+
+	
 }
