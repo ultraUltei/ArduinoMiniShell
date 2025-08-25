@@ -64,17 +64,5 @@ arduino:~$ list
 
 ---
 
-## 🧠 Tips
-
-- **Unknown commands**:  
-  If you enter an invalid command, the system will respond with `Unknown command: <command>`.
-
-- **Pin modes**:  
-  Pins can be configured as `INPUT`, `OUTPUT`, or `INPUT_PULLUP`.
-
-- **Analog values**:  
-  Values for `up analog` must be between 0 and 255.
-
----
 
 This project is based on ArduinoShell and can be extended with additional commands or features.
