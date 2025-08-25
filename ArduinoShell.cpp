@@ -38,7 +38,7 @@ void handleDown();
 void handleRead();
 
 void printPinArray();
-//void setPrompt(const char newprompt[]);
+void setPrompt(const char* newprompt);
 void shellInit();
 void shellTask();
 void addPin(int pinNumber, char* mode, bool analog);
@@ -47,10 +47,10 @@ void addPin(int pinNumber, char* mode, bool analog);
 
 //functions
 
-/*void setPrompt(const char newprompt[])
+void setPrompt(const char* newprompt)
 {
-    prompt = newprompt;
-}*/
+    strcpy(prompt, newprompt);
+}
 
 void printPinArray(){
   for(int i=0; i<npin; i++){
@@ -287,16 +287,19 @@ void shellTask() {
 }
 
 
+
+
 void setup()
 {
+	//setPrompt("yourprompt");
 	shellInit();
-    // setup code here
+	//setup code here
 }
 
 void loop()
 {
 	shellTask();
-    // loop code here
+	//loop code here
 
 
 	
