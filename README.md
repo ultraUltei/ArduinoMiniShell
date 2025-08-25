@@ -1,4 +1,4 @@
-# 🖥️ Arduino Shell
+# 🖥️ Arduino Mini-Shell
 
 A command-line interface to interact with your Arduino board via the Serial Monitor.
 
@@ -61,8 +61,3 @@ Display the current status of all configured pins.
 arduino:~$ list
 [13] Digital(PWM) OUTPUT
 [3] Analog OUTPUT
-
----
-
-
-This project is based on ArduinoShell and can be extended with additional commands or features.
