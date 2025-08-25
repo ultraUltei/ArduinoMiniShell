@@ -1,6 +1,6 @@
 # 🖥️ Arduino Shell
 
-A command-line interface to interact with your Arduino board via the Serial Monitor in the Arduino IDE or terminal programs like minicom and CoolTerm.
+A command-line interface to interact with your Arduino board via the Serial Monitor.
 
 ---
 
