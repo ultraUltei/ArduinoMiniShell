@@ -61,3 +61,6 @@ Display the current status of all configured pins.
 arduino:~$ list
 [13] Digital(PWM) OUTPUT
 [3] Analog OUTPUT
+
+### `reset`
+Resets all the active pins.
