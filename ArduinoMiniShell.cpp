@@ -42,10 +42,35 @@ void setPrompt(const char* newprompt);
 void shellInit();
 void shellTask();
 void addPin(int pinNumber, char* mode, bool analog);
+void removePin(int pinNumber);
+bool checkPin(int pinNumber);
 //////
 
 
 //functions
+
+bool checkPin(int pinNumber){
+    i = 0;
+    for(; i<npin; i++) if((pinarray+i)->pinNum == pinNumber) return true;
+    i = 0;
+    return false;
+}
+
+void removePin(int pinNumber){
+	i = 0;
+   	j = -1;
+    for(; i<npin; i++) if((pinarray+i)->pinNum == pinNumber){
+		j = i;
+     	break;
+    }
+  	if(j == -1) return;
+  
+  	for(i = j; i < npin - 1; i++) pinarray[i] = pinarray[i + 1];
+  
+  	i = 0;
+  	j = 0;
+    npin--;
+}
 
 void setPrompt(const char* newprompt)
 {
@@ -98,6 +123,12 @@ void handleUp(){
         }
         i = atoi(small);
 
+		if(checkPin(i))
+        {
+        	Serial.println("pin already active");
+          	return;
+        }
+
         small = strtok(NULL, " ");
         if (small == NULL) {
             Serial.println("Invalid syntax. Use: UP PIN <number> <mode>");
@@ -137,6 +168,12 @@ void handleUp(){
         }
         i = atoi(small);
 
+		if(checkPin(i))
+        {
+        	Serial.println("pin already active");
+          	return;
+        }
+
         small = strtok(NULL, " ");
         if (small == NULL) {
             Serial.println("Invalid syntax. Use: UP ANALOG <pin> <value>");
@@ -171,7 +208,7 @@ void handleDown() {
         Serial.print(F("PIN "));
         Serial.println(i);
         Serial.println(F("state: DOWN"));
-        //removePin(i);
+        removePin(i);
         i = 0;
   	} else Serial.println(F("Invalid syntax. Use: DOWN <number>"));
 }
@@ -304,3 +341,4 @@ void loop()
 
 	
 }
+
