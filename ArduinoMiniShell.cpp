@@ -36,6 +36,7 @@ void handleList();
 void handeUp();
 void handleDown();
 void handleRead();
+void handleReset();
 
 void printPinArray();
 void setPrompt(const char* newprompt);
@@ -231,6 +232,22 @@ void handleList(){
     printPinArray();
 }
 
+void handleReset(){
+	if (npin == 0){
+        Serial.println(F("No pins to reset."));
+        return;
+    }
+    for (i = 0; i < npin; i++){
+        j = pinarray[i].pinNum;
+        digitalWrite(j, LOW);
+    }
+    memset(pinarray, 0, sizeof(pinarray));
+    npin = 0;
+  	i = 0;
+  	j = 0;
+    Serial.println(F("All pins have been reset."));
+}
+
 void shellInit() {   
 
   Serial.begin(115200);
@@ -314,6 +331,7 @@ void shellTask() {
     else if(!strcmp(medium, "DOWN")) handleDown();    
     else if (!strcmp(medium, "READ")) handleRead();
     else if (!strcmp(medium, "LIST")) handleList();
+	else if (!strcmp(medium, "RESET")) handleReset();
     else{
       Serial.print(F("Unknown command: "));
       Serial.println(medium);
@@ -341,4 +359,5 @@ void loop()
 
 	
 }
+
 
